@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simple Maths</string>
+    <string name="btn_addition">Add</string>
+    <string name="btn_subtract">Substract</string>
+    <string name="number1">First number</string>
+    <string name="number2">Second number</string>
+    <string name="result">Results</string>
+    <string name="exit">Click to Exit</string>
+</resources>
