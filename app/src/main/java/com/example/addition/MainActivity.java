@@ -29,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
 
         fnumber = (EditText) findViewById(R.id.editText);
         snumber = (EditText) findViewById(R.id.editText2);
+        if (fnumber.getText().toString().length() == 0 ) {
+            try {
+                fnumber.setText(0);
+            } catch (Exception e) {
+                Log.v(msg,"exception setting fnumber");
+            }
+
+        }
+        if (snumber.getText().toString().length() == 0 ) {
+            try {
+                snumber.setText(0);
+            } catch (Exception e) {
+                Log.v(msg,"exception setting snumber");
+            }
+        }
+
         // output label
         output = findViewById(R.id.textView4);
 
@@ -37,8 +53,19 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number1 = Float.parseFloat(fnumber.getText().toString());
-                number2 = Float.parseFloat(snumber.getText().toString());
+                try {
+                    number1 = Float.parseFloat(fnumber.getText().toString());
+                } catch (Exception e) {
+                    number1 = 0;
+                    Log.v(msg,"number1 empty, set 0");
+                }
+                try {
+                    number2 = Float.parseFloat(snumber.getText().toString());
+                } catch (Exception e) {
+                    number2 = 0;
+                    Log.v(msg,"number2 empty, set 0");
+                }
+
                 results = number1+number2;
                 output.setText(""+results+"");
                 Log.v(msg,"Addition Results "+results);
@@ -50,8 +77,18 @@ public class MainActivity extends AppCompatActivity {
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number1 = Float.parseFloat(fnumber.getText().toString());
-                number2 = Float.parseFloat(snumber.getText().toString());
+                try {
+                    number1 = Float.parseFloat(fnumber.getText().toString());
+                } catch (Exception e) {
+                    number1 = 0;
+                    Log.v(msg,"number1 empty, set 0");
+                }
+                try {
+                    number2 = Float.parseFloat(snumber.getText().toString());
+                } catch (Exception e) {
+                    number2 = 0;
+                    Log.v(msg,"number2 empty, set 0");
+                }
                 results = number1-number2;
                 output.setText(""+results+"");
                 Log.v(msg,"Subtraction Results "+results);
